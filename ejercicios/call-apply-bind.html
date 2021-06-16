@@ -1,0 +1,29 @@
+<script>
+    function  saludar(){
+        console.log(`Hola soy ${this.name} ${this.apellido}`);
+    }
+
+    const fray ={
+        name: "fray",
+        apellido: "polo",
+    }
+
+    saludar.call(fray);
+    //console.log(this);
+
+    function caminar(metros, direccion){
+        console.log(`${this.name} camina ${metros} metros hacia el ${direccion}.`)
+    }
+
+    caminar.call(fray, 400, "norte")
+    
+    //aplay
+    const valores = [800, "sur"]
+    caminar.apply(fray,valores);
+
+    const daniel = {name: "Daniel", apellido:"sanchez"};
+    const danielSaluda = saludar.bind(daniel);
+    danielSaluda();
+    const danielCamina = caminar.bind(daniel,1500,"este");
+    danielCamina();
+</script>

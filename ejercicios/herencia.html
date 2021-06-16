@@ -1,0 +1,15 @@
+<script>
+
+    function Hero(name) {
+        this.name = name;
+    }
+
+    Hero.prototype.saludar = function() {
+        console.log(`Hola soy el gran ${this.name}`);
+    };
+
+    const ash = new Hero('ash');
+    ash.saludar();
+    console.log(ash.hasOwnProperty('saludar'));
+    console.log(Object.getPrototypeOf(ash));
+</script>

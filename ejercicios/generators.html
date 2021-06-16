@@ -1,0 +1,14 @@
+<script>
+    // generator
+function* simpleGenerator(){
+    //el generador inica suspendido y con .next() 
+    //continua al siguiente paso
+    console.log('generator start');
+    yield 1; //detiene la ejecucion del generador y devuelve un valor que se indica junto a el y el booleano del estado de la ejecucion si termina envia done: true y si no false
+    console.log('generador middle');
+    yield 2;
+    console.log('generador end');
+}
+
+const gen = simpleGenerator();
+</script>

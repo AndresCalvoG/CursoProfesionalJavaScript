@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 8rem;
+    background-image: linear-gradient(to right, rgba(228, 11, 156,140), rgba(224, 8, 19,140));
+    color: white;
+}
+header h1{
+    font-size: 3.6rem;
+}
+header p{
+    font-size: 1.8rem;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+}
+.movie{
+    margin-top: 1.5rem;
+    width: 80vw;
+    height: 40vw;
+}
+.container-buttons{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.container-buttons--box{
+    display: flex;
+    flex-direction: row;
+    width: 30rem;
+    height: auto;
+    justify-content: space-between;
+}
+.container-buttons--box button{
+    width: 10rem;
+    height: 4rem;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+    background-color: black;
+}
+.container-buttons--box button:hover{
+    color: rgba(228, 11, 156,140);
+}
+p {
+    font-size: 3rem;
+}

@@ -1,0 +1,18 @@
+<script>
+
+    function Hero(name) {
+        //const hero = Object.create(Hero.prototype);
+        this.name = name;
+        //return hero;
+    }
+
+    Hero.prototype.saludar = function() {
+        console.log(`Hola soy el gran ${this.name}`);
+    };
+
+    const ash = new Hero('ash');
+    ash.saludar();
+    const andres = new Hero('andres');
+    andres.saludar();
+
+</script>
