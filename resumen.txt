@@ -1,0 +1,36 @@
+Profesional de JavaScript:
+
+Temas:
+
+promesas
+getter y setters
+proxies
+generadores
+javascript engine
+herencia prototipal
+event loop
+browser y dom api
+
+patrones de diseño:
+-resuelve problemas comunes
+
+Como llega javScript a el documento
+notas:
+- las etiquetas scripts detienen el procesamiento de el html
+  y solo hasta que termina de ejecutar el script vuelve al procesamiento
+  del html
+- las script tags con src realizan una peticion fetch a la URL 
+  y trabajan igual al punto anterior.
+- las scripts tags con async atribute realizan la peticion fetch 
+  sin detener el procesamiento del html pero una vez recibido
+  el script funciona igual a la script tag.
+- los scripts con defer atribute es similar al async ya que la peticion
+  se realiza sin interrumpir el procesamiento del html pero
+  difieren la ejecucion del codigo 
+  hasta el final del documento, es decir al final del procesamiento 
+  html.
+
+Scope:
+-Scope o ambito de una variable representa el tiempo de vida de esta
+
+

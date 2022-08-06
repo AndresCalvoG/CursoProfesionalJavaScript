@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clousure</title>
+  </head>
+  <body>
+    <p>abre la consola</p>
+    <script>
+      //clousure
+      //IIFE
+      (function () {
+        let color = "green";
+        function printColor() {
+          console.log(color);
+        }
+        printColor();
+      })();
+
+      //function que regresan functions
+      function makeColorPrinter(color) {
+        let colorMassage = `The color is ${color}`;
+
+        return function () {
+          console.log(colorMassage);
+        };
+      }
+
+      let greenColorPrinter = makeColorPrinter("green");
+      console.log(greenColorPrinter());
+
+      //variables privadas
+      function makeCounter(n) {
+        let count = n;
+
+        return {
+          increase: function () {
+            count += 1;
+          },
+          decrease: function () {
+            count -= 1;
+          },
+          getCount: function () {
+            return count;
+          },
+        };
+      }
+      let counter = makeCounter(7);
+      console.log(counter.getCount());
+    </script>
+  </body>
+</html>

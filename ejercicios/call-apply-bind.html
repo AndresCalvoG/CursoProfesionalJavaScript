@@ -1,29 +1,61 @@
-<script>
-    function  saludar(){
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call-Apply-Bind</title>
+  </head>
+  <body>
+    <main>
+      <button class="button-type">button 1</button>
+      <button class="button-type">button 1</button>
+      <button class="button-type">button 1</button>
+    </main>
+    <script>
+      //estableciendo this usando call
+      function saludar() {
         console.log(`Hola soy ${this.name} ${this.apellido}`);
-    }
+      }
 
-    const fray ={
-        name: "fray",
-        apellido: "polo",
-    }
+      const andres = {
+        name: "andres",
+        apellido: "calvo",
+      };
 
-    saludar.call(fray);
-    //console.log(this);
+      saludar.call(andres);
+      //console.log(this);
 
-    function caminar(metros, direccion){
-        console.log(`${this.name} camina ${metros} metros hacia el ${direccion}.`)
-    }
+      function caminar(metros, direccion) {
+        console.log(
+          `${this.name} camina ${metros} metros hacia el ${direccion}.`
+        );
+      }
+      caminar.call(andres, 400, "norte");
 
-    caminar.call(fray, 400, "norte")
-    
-    //aplay
-    const valores = [800, "sur"]
-    caminar.apply(fray,valores);
+      //Establecer el this usando apply y pasar argumentos a la function
+      const valores = [800, "sur"];
+      caminar.apply(andres, valores); //el segundo parametro es un array de parametros
 
-    const daniel = {name: "Daniel", apellido:"sanchez"};
-    const danielSaluda = saludar.bind(daniel);
-    danielSaluda();
-    const danielCamina = caminar.bind(daniel,1500,"este");
-    danielCamina();
-</script>
+      //Estableciendo this creando una nueva function usando bind
+      const daniel = { name: "Daniel", apellido: "sanchez" };
+      const danielSaluda = saludar.bind(daniel);
+      danielSaluda();
+      const danielCamina = caminar.bind(daniel, 1500, "este");
+      danielCamina();
+
+      //ejemplo de uso de estos metodos
+      const buttons = document.getElementsByClassName("button-type");
+      //console.log(typeof buttons);
+      // buttons.forEach((element) => {
+      //   element.onclick = () => {
+      //     alert("aprende");
+      //   };
+      // });
+      //console.log(buttons);
+      Array.prototype.forEach.call(buttons, (button) => {
+        button.onclick = () => alert("Nunca pares de aprender!");
+      });
+    </script>
+  </body>
+</html>

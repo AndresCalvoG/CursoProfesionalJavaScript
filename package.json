@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html ejercicios/index.html ejercicios/**/*.html"
+    "start": "parcel index.html ejercicios/index.html ejercicios/**/*.html",
+    "start2": "live-server"
   },
   "author": "Andres Calvo <andrescalvo@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "live-server": "^1.2.2",
     "parcel-bundler": "^1.12.5",
     "typescript": "^4.2.4"
   },

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scope</title>
+  </head>
+  <body>
+    <p>Abre la consola</p>
+    <script>
+      //Global scope
+      var mensage = "hello platzi";
+
+      //function scope
+      function printNumber() {
+        for (var i = 0; i < 10; i++) {
+          function eventuelly(n) {
+            setTimeout(() => {
+              console.log(n);
+            }, 100);
+          }
+          eventuelly(i);
+        }
+      }
+      printNumber();
+
+      //block scope
+      function printNumber() {
+        for (let i = 0; i < 10; i++) {
+          setTimeout(() => {
+            console.log(i);
+          }, 100);
+        }
+      }
+      printNumber();
+
+      //module scope
+      // limita el scope al archivo donde esta la variable usando
+      // type="module" en la script tag
+    </script>
+  </body>
+</html>
