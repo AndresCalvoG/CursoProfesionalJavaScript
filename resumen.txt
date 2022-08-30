@@ -14,7 +14,7 @@ browser y dom api
 patrones de diseño:
 -resuelve problemas comunes
 
-Como llega javScript a el documento
+Como llega javScript a el documento:
 notas:
 - las etiquetas scripts detienen el procesamiento de el html
   y solo hasta que termina de ejecutar el script vuelve al procesamiento
@@ -31,6 +31,47 @@ notas:
   html.
 
 Scope:
--Scope o ambito de una variable representa el tiempo de vida de esta
+-Scope o ambito de una variable representa el tiempo de vida de esta.
 
+Como funciona JavaScript:
+ * javasscript nacion con netscape
+ *ahora el principal navegador es google chrome el cual 
+ trae su propio motor de JS el V8 el cual funciona asi:
 
+    *Recibe codigo fuente
+    *parsea el codigo y produce un abstract syntax tree (AST).
+    *se compila a bytecode y se ejecuta.
+    *se optimiza a machine code y se reemplaza el codigo base
+
+que es un parser?
+  *este toma el codigo fuente y lo va a leer pero primero lo 
+  descompone en tokens para terminar produciendo el (AST).
+  si en esta fase el parser no puede leer algo del codigo es cuando ocurre 
+  un SyntaxError.
+  esta parte toma entre el 15 al 20 % del proceso de ejecucion.
+
+modos de parser de V8:
+*Eager parsing
+  encuentra errores
+  crea el AST
+  contruye scopes
+
+*Lazy parsing
+  doble de rapido que el Eager
+  no crea AST
+  contruye scopes parcialmente
+
+demo - tokens  = https://esprima.org/
+
+Abstract Syntax Tree:
+  es un grafo (estructura de datos) que representa un programa.
+
+  se usa en:
+  *javascript engine
+  *bundlers: webpack, rollup, parcel 
+  *transpilers: babel 
+  *linters: eslint, prettify
+  *type checkers: typescript, flow
+  *syntax highlighters
+
+  demo - AST  = https://astexplorer.net/
