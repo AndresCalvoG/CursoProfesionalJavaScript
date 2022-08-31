@@ -129,3 +129,6 @@ para que sean ejecutadas. asi mismo con las tareas asincronas
 por otro lado las promesas se almacenan en otra cola llamada microtask queue y al vaciarce 
 el stack ele event loop tomara primero las microtask queue y luego las task queue osea primero
 ejecutara las promesas y luego las tareas pendientes
+
+
+Promesas:
