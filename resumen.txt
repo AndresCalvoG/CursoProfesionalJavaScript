@@ -109,3 +109,23 @@ instruccion especifica a un procesador
 el v8 transforma bytecode a machine code
 
 
+event loop
+hace parecer a js multi hilo pero en realidad es mono hilo
+
+javascript se organiza usando dos estructuras de datos
+el stack y el memory heap.
+
+*el stack lleva el registro organizado de donde esta la ejecucion
+
+*el memory heap es una estructura desorganizada y almacena info sobre 
+las variables y el scope.
+
+el proceso de ejecucion del event loop revisa constantemente el stack
+y espera a que este este vacio para meterle tareas pendientes
+que se encontraban en las tareas ajendadas y luego de esto estas pasan al
+task queue donde el event loop toma las tareas y las envia al stack si estaba vacio,
+para que sean ejecutadas. asi mismo con las tareas asincronas
+
+por otro lado las promesas se almacenan en otra cola llamada microtask queue y al vaciarce 
+el stack ele event loop tomara primero las microtask queue y luego las task queue osea primero
+ejecutara las promesas y luego las tareas pendientes
