@@ -7,9 +7,7 @@ const mute = document.querySelector("#sound");
 
 const player = new MediaPlayer({
   element: video,
-  plugins: [
-    /*new AutoPlay()*/
-  ],
+  plugins: [new AutoPlay()],
 });
 
 button.onclick = () => {
