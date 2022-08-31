@@ -94,3 +94,18 @@ Abstract Syntax Tree:
   };
 }
 
+
+bytecode vs machine code
+
+bytecode:
+codigo paarecido a assemby
+portatil
+ejecutado por una virtual machine
+
+machine code:
+binario
+instruccion especifica a un procesador
+
+el v8 transforma bytecode a machine code
+
+
