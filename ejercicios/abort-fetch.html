@@ -1,59 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Abort-fetch</title>
-</head>
-<body>
-    <img
-     id="huge-image"
-     height="400"
-     />
+  </head>
+  <body>
+    <img id="huge-image" height="400" />
     <button id="load">load HUGE image</button>
-    <button id="stop">Stop feching</button>
+    <button id="stop" disabled>Stop feching</button>
 
     <script>
-        //const url = new Request('http://images.pexels.com/photos/974470/nature-stars-milky-way-galaxy-974470.jpeg?q=100');
-        const url = 'https://images.pexels.com/photos/7540071/pexels-photo-7540071.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-        const img = document.getElementById('huge-image');
-        const loadButton = document.getElementById('load');
-        const stopButton = document.getElementById('stop');
-        let controler;
+      //const url = new Request('http://images.pexels.com/photos/974470/nature-stars-milky-way-galaxy-974470.jpeg?q=100');
+      const url =
+        "http://images.pexels.com/photos/974470/nature-stars-milky-way-galaxy-974470.jpeg?q=100";
+      const img = document.getElementById("huge-image");
+      const loadButton = document.getElementById("load");
+      const stopButton = document.getElementById("stop");
+      let controler;
 
-        function startLoading(){
-            loadButton.disable = true;
-            loadButton.innerText = 'loading...'
-            stopButton.disable = false;
+      function startLoading() {
+        loadButton.disable = true;
+        loadButton.innerText = "loading...";
+        stopButton.disable = false;
+      }
+
+      function stopLoading() {
+        loadButton.disable = false;
+        loadButton.innerText = "load HUGE Image";
+        stopButton.disable = true;
+      }
+
+      loadButton.onclick = async function () {
+        const headers = new Headers();
+        headers.append("Access-Control-Allow-Origin", "*");
+        startLoading();
+
+        controller = new AbortController();
+        try {
+          const response = await fetch(url, {
+            signal: controller.signal,
+          });
+          console.log(response);
+          const blob = await response.blob();
+          const imgUrl = URL.createObjectURL(blob);
+
+          img.src = imgUrl;
+          stopLoading();
+        } catch (error) {
+          console.log(error.message);
         }
+      };
 
-        function stopLoading(){
-            loadButton.disable = false;
-            loadButton.innerText = 'load HUGE Image'
-            stopButton.disable = true;
-        }
-
-        loadButton.onclick = async function (){
-            startLoading();
-
-            controller = new AbortController();
-            try{ 
-            const response = await fetch(url,{mode:'no-cors',signal: controller.signal });
-            const blob = await response.blob();
-            const imgUrl = URL.createObjectURL(blob);
-            img.src = imgUrl;
-            stopLoading();
-            }catch(error){
-                console.log(error.message)
-            }
-        };
-
-        stopButton.onclick = function(){
-            controller.abort();
-            stopLoading();
-        }
-
+      stopButton.onclick = function () {
+        controller.abort();
+        stopLoading();
+      };
     </script>
-</body>
+  </body>
 </html>
