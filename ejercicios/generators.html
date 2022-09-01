@@ -1,14 +1,62 @@
-<script>
-    // generator
-function* simpleGenerator(){
-    //el generador inica suspendido y con .next() 
-    //continua al siguiente paso
-    console.log('generator start');
-    yield 1; //detiene la ejecucion del generador y devuelve un valor que se indica junto a el y el booleano del estado de la ejecucion si termina envia done: true y si no false
-    console.log('generador middle');
-    yield 2;
-    console.log('generador end');
-}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generadores</title>
+  </head>
+  <body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre la consola</em></p>
 
-const gen = simpleGenerator();
-</script>
+    <script>
+      // generator
+      function* simpleGenerator() {
+        //el generador inica suspendido y con .next()
+        //continua al siguiente paso
+        console.log("generator start");
+        yield 1; //detiene la ejecucion del generador y devuelve un valor que se indica junto a el y el booleano del estado de la ejecucion si termina envia done: true y si no false
+        console.log("generador middle");
+        yield 2;
+        console.log("generador end");
+      }
+      //const gen = simpleGenerator();
+
+      //podemos hacer generadores infinitos
+      function* idMaker() {
+        let id = 1;
+        while (true) {
+          yield id;
+          id = id + 1;
+        }
+      }
+
+      //con next podemos pasar valores a la funcion
+      function* idMakerWithReset() {
+        let id = 1;
+        let reset;
+        while (true) {
+          reset = yield id;
+          if (reset) {
+            id = 1;
+          } else {
+            id = id + 1;
+          }
+        }
+      }
+
+      //secuencia fibonacci
+      function* fibonacci() {
+        let a = 1;
+        let b = 1;
+        while (true) {
+          const nextNumber = a + b;
+          a = b;
+          b = nextNumber;
+          yield nextNumber;
+        }
+      }
+    </script>
+  </body>
+</html>
