@@ -33,8 +33,6 @@
       }
 
       loadButton.onclick = async function () {
-        const headers = new Headers();
-        headers.append("Access-Control-Allow-Origin", "*");
         startLoading();
 
         controller = new AbortController();
@@ -45,8 +43,8 @@
           console.log(response);
           const blob = await response.blob();
           const imgUrl = URL.createObjectURL(blob);
-
           img.src = imgUrl;
+
           stopLoading();
         } catch (error) {
           console.log(error.message);
