@@ -77,7 +77,7 @@ const richard2 = fullName2("richar");
 console.log(richard2);
 //end class 26 funciones en typescrip
 
-// interfases
+// interfases, nos permiten declara la forma que tiene un objeto
 interface Rectangulo {
   ancho: number;
   alto: number;
