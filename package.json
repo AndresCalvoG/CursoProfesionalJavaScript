@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html ejercicios/index.html ejercicios/**/*.html",
+    "start": "parcel index.html ejercicios/typescript/index.html ejercicios/**/*.html",
     "start2": "live-server"
   },
   "author": "Andres Calvo <andrescalvo@gmail.com>",
@@ -17,5 +17,6 @@
   },
   "browserslist": [
     "last 1 chrome version"
-  ]
+  ],
+  "dependencies": {}
 }
