@@ -6,20 +6,20 @@ function add(a: number, b: number) {
 }
 const sum = add(2, 5);
 
-//boolean
+//tipos boolean
 let muted: boolean = true;
 muted = false;
 
-//numeros
+//tipos numeros
 let numerador: number = 42;
 let denominador: number = 6;
 let resultado = numerador / denominador;
 
-//string
+//tipos string
 let nombre: string = "richard";
 let saludo = `me llamo ${nombre}`;
 
-//arreglos
+//tipos de arreglos
 let people: string[] = [];
 people = ["isabel", "nicol", "nicolas"];
 people.push("90");
@@ -45,6 +45,7 @@ comodin = { type: "wildcard" };
 
 //Object
 let someObject: object = { type: "wildcard" };
+//end class 25 tipos basicos
 
 //funciones
 function addi(a: number, b: number): number {
