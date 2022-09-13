@@ -47,20 +47,18 @@ comodin = { type: "wildcard" };
 let someObject: object = { type: "wildcard" };
 //end class 25 tipos basicos
 
-//funciones
+//Tipando funciones argumentos y retorno
 function addi(a: number, b: number): number {
   return a + b;
 }
 const sumi = addi(2, 5);
 
 //funcion que retorna otra funcion
-
 function createAdder(a: number): (number) => number {
   return function (b: number) {
     return b + a;
   };
 }
-
 const addFour = createAdder(4);
 const fourPlus6 = addFour(6);
 
@@ -77,6 +75,7 @@ function fullName2(firstName: string, lastName: string = "smith"): string {
 }
 const richard2 = fullName2("richar");
 console.log(richard2);
+//end class 26 funciones en typescrip
 
 // interfases
 interface Rectangulo {
