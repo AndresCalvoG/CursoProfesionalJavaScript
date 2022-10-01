@@ -20,7 +20,7 @@ mute.onclick = () => {
 };
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("/serviceWorker.js").catch((error) => {
+  navigator.serviceWorker.register("../serviceWorker.js").catch((error) => {
     console.log(error.message);
   });
 }
