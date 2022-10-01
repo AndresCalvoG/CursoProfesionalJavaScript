@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Observer</title>
-</head>
-<body>
+  </head>
+  <body>
+    <h1>Patron Observer</h1>
+    <p>
+      Consiste de dos participantes un sujeto y unos observadores los cuales se
+      pueden suscribir y desuscribir en cualquier momento, esto es importante en
+      diseño de sotfware par contruir codigo desacoplado, osea reducir los
+      detalles de implementacion que un objeto debe conocer de los otros. El
+      observador debe tener siempre un metodo update, cuando el sujeto quiere
+      notificar a los suscriptores va a llamar al metodo update de cada uno y
+      como argumento a la funcion debe incluir la informacion a notificar
+    </p>
     <h1>Precio del Bitcoin</h1>
     <h3>
-        <p><em id="price">$0.00</em></p>
+      <p><em id="price">$0.00</em></p>
     </h3>
 
     <input id="value" />
 
     <script src="/ejercicios/observer/index.ts"></script>
-</body>
+  </body>
 </html>
