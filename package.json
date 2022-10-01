@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel ejercicios/PatronesDeDiseño/singleton/index.html ",
+    "start": "parcel ejercicios/PatronesDeDiseño/observer/index.html ",
     "start2": "live-server"
   },
   "author": "Andres Calvo <andrescalvo@gmail.com>",
