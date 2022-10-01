@@ -9,10 +9,10 @@ const player = new MediaPlayer({
   plugins: [new AutoPlay(), new AutoPause()],
 });
 
-const playButton: HTMLElement = document.querySelector("#playButton");
+const playButton: HTMLElement = document.querySelector("#playButton")!;
 playButton.onclick = () => player.togglePlay();
 
-const muteButton: HTMLElement = document.querySelector("#muteButton");
+const muteButton: HTMLElement = document.querySelector("#muteButton")!;
 muteButton.onclick = () => player.toggleMute();
 
 if ("serviceWorker" in navigator) {

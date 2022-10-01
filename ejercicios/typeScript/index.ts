@@ -101,3 +101,6 @@ rect.toString = function () {
 };
 
 console.log(rect.toString());
+
+// i can use ! operator in the end of a line code to indicate that
+// line never will be null
