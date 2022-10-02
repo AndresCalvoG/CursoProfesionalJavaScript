@@ -1,4 +1,4 @@
-import MediaPlayer from "../../../../../mediaPlayer/MediaPlayer";
+import MediaPlayer from "../../mediaPlayer";
 import Ads, { Ad } from "./Ads";
 
 class AdsPluguin {
