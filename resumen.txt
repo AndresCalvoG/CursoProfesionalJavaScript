@@ -132,3 +132,23 @@ ejecutara las promesas y luego las tareas pendientes
 
 
 Promesas:
+
+Publicacion en NPM:
+*iniciamis el proyecto con npm init -y
+ y le damos nombre y demas detalles del package.json
+
+*luego intalamos typescripe si es necesario y añadimos el siguiente script al packege.json 
+  "build":"tsc src/**/*.ts --outDir lib"
+  tsc: comando para usar typescript
+  src... : rutas de los archivos a compilar
+  --outDir: nombre de la carpeta de salida a crear
+  lib: nombre de la carpeta
+
+*nos aseguramos que el nombre del archivo main o principal este bien escrito en el package.json
+
+*añadimos un .gitignore para omitir node_modules y lib del repositorio.
+
+*con el comando npm whoami sabremos si estamos logged o si no debemos ejecutar 
+ npm loggin.
+
+*ahora si ejecutamos npm publish --access=public  para publicar un proyecto publico
