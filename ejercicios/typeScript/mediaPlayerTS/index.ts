@@ -1,12 +1,13 @@
 import MediaPlayer from "./mediaPlayer";
 import AutoPlay from "./plugins/Autoplay";
 import AutoPause from "./plugins/AutoPause";
+import Ads from "./plugins/Ads";
 
 const video = document.querySelector("video");
 
 const player = new MediaPlayer({
   element: video,
-  plugins: [new AutoPlay(), new AutoPause()],
+  plugins: [new AutoPlay(), new AutoPause(), new Ads()],
 });
 
 const playButton: HTMLElement = document.querySelector("#playButton")!;
